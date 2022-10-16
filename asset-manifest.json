@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/infroce-test-task/static/css/main.7acaea2f.css",
+    "main.js": "/infroce-test-task/static/js/main.1c37b54a.js",
+    "index.html": "/infroce-test-task/index.html",
+    "main.7acaea2f.css.map": "/infroce-test-task/static/css/main.7acaea2f.css.map",
+    "main.1c37b54a.js.map": "/infroce-test-task/static/js/main.1c37b54a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.1c37b54a.js"
+  ]
+}
