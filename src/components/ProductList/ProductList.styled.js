@@ -22,7 +22,7 @@ export const List = styled(Box)`
   margin-right: auto;
   padding-top: 30px;
 `;
-export const ListItem = styled.li`
+export const Item = styled.li`
   width: 300px;
 `;
 export const ItemImg = styled.img`

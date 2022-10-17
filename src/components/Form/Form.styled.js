@@ -3,6 +3,7 @@ import { Form, Field } from 'formik';
 export const AddForm = styled(Form)`
   position: absolute;
   width: 500px;
+  background-color: rgba(231, 139, 107, 0.5);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +14,11 @@ export const AddForm = styled(Form)`
   border: ${({ theme }) => theme.borders.normal}${({ theme }) => theme.colors.black};
   border-radius: ${({ theme }) => theme.radii.normal};
 `;
-
+export const Title = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.roboto};
+  font-size: ${({ theme }) => theme.fontSizes.l};
+  margin-bottom: ${({ theme }) => theme.space[3]}px;
+`;
 export const Label = styled.label`
   font-family: ${({ theme }) => theme.fonts.monospace};
   font-size: ${({ theme }) => theme.fontSizes.m};

@@ -1,17 +1,8 @@
 import { Component } from 'react';
 import { Form } from '../Form';
 import { Box } from 'components/Box';
-import {
-  Title,
-  Button,
-  List,
-  ListItem,
-  ItemImg,
-  ItemTitle,
-  ItemValue,
-} from './ProductList.styled';
-import { EditModal } from 'components/EditModal';
-import { Comments } from 'components/Comments';
+import { Title, Button, List } from './ProductList.styled';
+import { ListItem } from './ProductListItem';
 const initialValuesAddForm = {
   imageUrl: '',
   name: '',
@@ -143,53 +134,26 @@ export class ProductList extends Component {
               size: { width, height },
               weight,
             }) => (
-              <ListItem key={id}>
-                <ItemImg src={imageUrl} alt={name} />
-                <Box
-                  p="3"
-                  borderX="normal"
-                  borderBottom="normal"
-                  borderRadius="normal"
-                >
-                  <ItemTitle>{name}</ItemTitle>
-                  <ItemValue>Count: {count}</ItemValue>
-                  <ItemValue>
-                    Sizes: {width} : {height}
-                  </ItemValue>
-                  <ItemValue>Weight: {weight}</ItemValue>
-                  <Button id={id} onClick={this.showEdit}>
-                    Edit
-                  </Button>
-                  {this.state.editToShow === id && (
-                    <EditModal
-                      submit={this.updateItem}
-                      cancel={this.hideEdit}
-                      initialValues={{
-                        imageUrl,
-                        name,
-                        count,
-                        width,
-                        height,
-                        weight,
-                      }}
-                      id={id}
-                    ></EditModal>
-                  )}
-                  <Button
-                    onClick={() => {
-                      this.handleDeleteCard(id);
-                    }}
-                  >
-                    Delete
-                  </Button>
-                  <Button id={id} onClick={this.showCardComments}>
-                    Comments
-                  </Button>
-                  {this.state.commentsToShow === id && (
-                    <Comments id={id} comments={this.state.comments}></Comments>
-                  )}
-                </Box>
-              </ListItem>
+              <ListItem
+                key={id}
+                params={{
+                  id,
+                  imageUrl,
+                  name,
+                  count,
+                  width,
+                  height,
+                  weight,
+                }}
+                showEdit={this.showEdit}
+                editToShow={this.state.editToShow}
+                updateItem={this.updateItem}
+                hideEdit={this.hideEdit}
+                handleDeleteCard={this.handleDeleteCard}
+                showCardComments={this.showCardComments}
+                commentsToShow={this.state.commentsToShow}
+                comments={this.state.comments}
+              ></ListItem>
             )
           )}
         </List>
